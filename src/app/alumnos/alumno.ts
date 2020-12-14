@@ -1,0 +1,20 @@
+export class Alumno {
+    id_al:number;
+    tipo_doc_al:string;
+    num_doc_al:string;
+    id_rpr1:number;
+    id_rpr2:number;
+    prim_nomb_al:string;
+    seg_nomb_al:string;
+    prim_apell_al:string;
+    seg_apell_al:string;
+    sexo_al:string;
+    fech_nac_al:Date;
+    edad_al:number;
+    dir_ppal_al:string;
+    dir_sec_al:string;
+    tlf_ppal_al:string;
+    tlf_sec_al:string;
+    email_al:string;
+    fech_ing_al:Date;
+}
