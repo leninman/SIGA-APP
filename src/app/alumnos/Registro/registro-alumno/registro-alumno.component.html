@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/src/app/alumnos/Registro/registro-alumno/js/utils.js"></script>
+    
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+
+        <!--<a class="navbar-brand" href="#">
+          <img src="/assets/images/LOGOPOCATERRA3.svg" width="120" height="70" class="d-inline-block align-top" alt="">
+      
+        </a>-->
+
+        <!--<a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>-->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!--<li class="nav-item">
+              <a class="nav-link" routerLink="">Nuevo</a>
+            </li>-->
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="#">
+                        <img src="/assets/images/home-solid.svg" width="50" height="40" class="d-inline-block align-top"
+                            alt="">
+
+                    </a>
+
+                    <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+                </li>
+
+
+
+                <!--<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>-->
+                <!--<li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>-->
+            </ul>
+            <!--<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>-->
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="card border-success mb-3 col-md-offset-1" style="width: 80%;">
+
+        <div class="card-body text-dark">
+            <div id="datosalumno" class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <form class="form-horizontal" role="form" (ngSubmit)="crear()">
+                            <fieldset>
+
+                                <legend>Informacion básica del alumno</legend>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="primNombAl">Primer nombre</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.primNombAl" name="primNombAl">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="segNombAl">Segundo nombre</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.segNombAl" name="segNombAl">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="primApellAl">Primer apellido</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.primApellAl" name="primApellAl">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="segApellAl">Segundo apellido</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.segApellAl" name="segApellAl">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <label for="tipoDocAl">T documento</label>
+                                        <select class="form-control" [(ngModel)]="alumnodto.tipoDocAl" name="tipoDocAl">
+                                            <option selected>V</option>
+                                            <option>E</option>
+                                            <option>P</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="numDocAl">Numero de Cédula</label>
+                                        <input type="number" class="form-control"  [(ngModel)]="alumnodto.numDocAl" name="numDocAl">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fechNacAl">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control" [(ngModel)]="alumnodto.fechNacAl" name="fechNacAl">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-2">
+                                        <label for="edadAl">Edad</label>
+                                        <input type="number" class="form-control" [(ngModel)]="alumnodto.edadAl" name="edadAl">
+                                    </div>
+
+
+
+                                    <div class="col-sm-4">
+                                        <label for="sexoAl">Sexo</label>
+                                        <select class="form-control" [(ngModel)]="alumnodto.sexoAl" name="sexoAl">
+                                            <option value="femenino">Femenino</option>
+                                            <option value="masculino">Masculino</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <label for="status">Estado</label>
+                                        <select class="form-control" [(ngModel)]="alumnodto.status" name="status">
+                                            <option value="activo">Activo</option>
+                                            <option value="retirado">Retirado</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <legend>Direccion principal de domicilio</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.dirPpalAl" name="dirPpalAl">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Estado" class="form-control" [(ngModel)]="estadodirppalest" name="estadodirppalest">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Municipio" class="form-control" [(ngModel)]="municipiodirppalest" name="municipiodirppalest">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Ciudad" class="form-control" [(ngModel)]="ciudaddirppalest" name="ciudaddirppalest">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Parroquia" class="form-control" [(ngModel)]="parroquiadirppalest" name="parroquiadirppalest">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Código postal" class="form-control" [(ngModel)]="codpostaldirppalest" name="codpostaldirppalest">
+                                    </div>
+                                </div>
+                                <legend>Direccion secundaria de domicilio</legend>
+
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.dirSecAl" name="dirSecAl">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Estado" class="form-control" [(ngModel)]="estadodirsecest" name="estadodirsecest">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Municipio" class="form-control" [(ngModel)]="municipiodirsecest" name="municipiodirsecest">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Ciudad" class="form-control" [(ngModel)]="ciudaddirsecest" name="ciudaddirsecest">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Parroquia" class="form-control" [(ngModel)]="parroquiadirsecest" name="parroquiadirsecest">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Código postal" class="form-control" [(ngModel)]="codpostaldirsecest" name="codpostaldirsecest">
+                                    </div>
+                                </div>
+                                <legend>Información de Contacto Principal</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <select class="form-control" [(ngModel)]="codoperadorappalest" name="codoperadorappalest">
+                                            <option>0212</option>
+                                            <option>0414</option>
+                                            <option>0414</option>
+                                            <option>0424</option>
+                                            <option>0416/option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control" [(ngModel)]="alumnodto.tlfPpalAl" name="tlfPpalAl">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="email" placeholder="Correo electronico" class="form-control" [(ngModel)]="alumnodto.emailAl" name="emailAl">
+                                    </div>
+                                </div>
+
+
+
+                                <legend>Información de Contacto Secundario</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <select class="form-control" [(ngModel)]="codoperadorasecundariaest" name="codoperadorasecundariaest">
+                                            <option>0212</option>
+                                            <option>0414</option>
+                                            <option>0414</option>
+                                            <option>0424</option>
+                                            <option>0416/option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control"  [(ngModel)]="alumnodto.tlfSecAl" name="tlfSecAl">
+                                    </div>
+
+                                </div>
+
+
+
+                            </fieldset>
+                        </form>
+                    </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-success mb-3 col-md-offset-1" style="width: 80%;">
+
+        <div class="card-body text-dark">
+            <div id="datosalumno" class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <form class="form-horizontal" role="form">
+                            <fieldset>
+
+                                <legend>Informacion básica del representante principal</legend>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="primNombRpr1">Primer nombre</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.primNombRpr1" name="primNombRpr1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="segNombRpr1">Segundo nombre</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.segNombRpr1" name="segNombRpr1">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="primApellRpr1">Primer apellido</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.primApellRpr1" name="primApellRpr1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="segApellRpr1">Segundo apellido</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.segApellRpr1" name="segApellRpr1">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <label for="tipoDocRep1">T documento</label>
+                                        <select class="form-control" [(ngModel)]="alumnodto.tipoDocRep1" name="tipoDocRep1">
+                                            <option selected>V</option>
+                                            <option>E</option>
+                                            <option>P</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="numDocRep1">Numero de Cédula</label>
+                                        <input type="number" class="form-control" [(ngModel)]="alumnodto.numDocRep1" name="numDocRep1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fechNacRpr1">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control" [(ngModel)]="alumnodto.fechNacRpr1" name="fechNacRpr1">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-2">
+                                        <label for="edadRpr1">Edad</label>
+                                        <input type="number" class="form-control" [(ngModel)]="alumnodto.edadRpr1" name="edadRpr1">
+                                    </div>
+
+
+
+                                    <div class="col-sm-4">
+                                        <label for="sexoRpr1">Sexo</label>
+                                        <select class="form-control"  [(ngModel)]="alumnodto.sexoRpr1" name="sexoRpr1">
+                                            <option value="femenino">Femenino</option>
+                                            <option value="masculino">Masculino</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-sm-3">
+                                        <label for="parentescoRpr1">Parentesco</label>
+                                        <select class="form-control" [(ngModel)]="alumnodto.parentescoRpr1" name="parentescoRpr1">
+                                            <option value="madre">Madre</option>
+                                            <option value="padre">Padre</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="edoCivRpr1">Edo Civil</label>
+                                        <select class="form-control" [(ngModel)]="alumnodto.edoCivRpr1" name="edoCivRpr1">
+                                            <option value="casado">Casado</option>
+                                            <option value="soltero">Soltero</option>
+                                            <option value="viudo">Viudo</option>
+                                            <option value="divorciado">Divorciado</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <legend>Direccion principal de domicilio</legend>
+
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.dirPpalRpr1" name="dirPpalRpr1">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Estado" class="form-control">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Municipio" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Código postal" class="form-control">
+                                    </div>
+                                </div>
+                                <legend>Direccion secundaria de domicilio</legend>
+
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Estado" class="form-control">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Municipio" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Código postal" class="form-control">
+                                    </div>
+                                </div>
+                                <legend>Información de Contacto Principal</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>0212</option>
+                                            <option>0414</option>
+                                            <option>0414</option>
+                                            <option>0424</option>
+                                            <option>0416/option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="email" placeholder="Correo electronico" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                                <legend>Información de Contacto Secundario</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>0212</option>
+                                            <option>0414</option>
+                                            <option>0414</option>
+                                            <option>0424</option>
+                                            <option>0416/option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-4">
+                                        <input id="chkRepresentante2" type="checkbox" [(ngModel)]="visible" name="visible"/> Posee representante secundario ?
+                                    </div> 
+                                </div>
+
+
+
+                            </fieldset>
+
+
+
+                        </form>
+
+                    </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="visible" class="card border-success mb-3 col-md-offset-1" id="representante2" style="width: 80%;">
+
+        <div class="card-body text-dark">
+            <div id="datosalumno" class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <form class="form-horizontal" role="form">
+                            <fieldset>
+
+                                <legend>Informacion básica del representante secundario</legend>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Primer nombre</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Segundo nombre</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Primer apellido</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Segundo apellido</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <label>T documento</label>
+                                        <select class="form-control">
+                                            <option selected>V</option>
+                                            <option>E</option>
+                                            <option>P</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Numero de Cédula</label>
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Fecha de nacimiento</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-2">
+                                        <label>Edad</label>
+                                        <input type="number" class="form-control">
+                                    </div>
+
+
+
+                                    <div class="col-sm-4">
+                                        <label>Sexo</label>
+                                        <select class="form-control">
+                                            <option value="femenino">Femenino</option>
+                                            <option value="masculino">Masculino</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-sm-3">
+                                        <label>Parentesco</label>
+                                        <select class="form-control">
+                                            <option value="madre">Madre</option>
+                                            <option value="padre">Padre</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Edo Civil</label>
+                                        <select class="form-control">
+                                            <option value="casado">Casado</option>
+                                            <option value="soltero">Soltero</option>
+                                            <option value="viudo">Viudo</option>
+                                            <option value="divorciado">Divorciado</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <legend>Direccion principal de domicilio</legend>
+
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Estado" class="form-control">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Municipio" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Código postal" class="form-control">
+                                    </div>
+                                </div>
+                                <legend>Direccion secundaria de domicilio</legend>
+
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Estado" class="form-control">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" placeholder="Municipio" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" placeholder="Código postal" class="form-control">
+                                    </div>
+                                </div>
+                                <legend>Información de Contacto Principal</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>0212</option>
+                                            <option>0414</option>
+                                            <option>0414</option>
+                                            <option>0424</option>
+                                            <option>0416/option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="email" placeholder="Correo electronico" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                                <legend>Información de Contacto Secundario</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>0212</option>
+                                            <option>0414</option>
+                                            <option>0414</option>
+                                            <option>0424</option>
+                                            <option>0416/option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                
+
+
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+
+
+
+
+
+    <div class="card border-success mb-3 col-md-offset-1" style="width: 80%;">
+        <div class="card-body text-dark">
+            <div id="datosalumno" class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <form class="form-horizontal" role="form">
+                            <fieldset>
+                                <legend>Informacion del curso</legend>
+
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <label>Año que cursa</label>
+                                        <select class="form-control">
+                                            <option *ngFor="let annio of annios">{{annio.annio}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Seccion</label>
+                                        <select class="form-control">
+                                            <option *ngFor="let seccion of secciones">{{seccion.seccion}}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Año escolar</label>
+                                        <select class="form-control">
+                                            <option *ngFor="let annioescolar of annioescolar">{{annioescolar.intAnnioEsc}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="width: 100%;">
+                                    <div class="form-group">
+                                        <div class="col-sm-5">
+                            
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="submit" class="btn btn-default">Cancelar</button>
+                            
+                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                               
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+</body>
+
+
+
+
+</html>
+

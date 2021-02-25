@@ -8,6 +8,8 @@ import { PrincipalComponent } from './principal/principal.component';
 import { HeaderComponent } from './principal/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
+import { RegistroAlumnoComponent } from './alumnos/Registro/registro-alumno/registro-alumno.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +20,9 @@ import {HttpClientModule} from '@angular/common/http';
     PrincipalComponent,
     HeaderComponent,
     FooterComponent,
+    RegistroAlumnoComponent,
+  
+
   
     
   ],
@@ -25,6 +30,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule
  
   ],
   providers: [],

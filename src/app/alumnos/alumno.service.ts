@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Alumno} from './alumno';
 import {AlumnoCursoDTO} from './alumnocursodto';
 import {Observable,of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +13,7 @@ export class AlumnoService {
 
   getAlumno(): Observable<AlumnoCursoDTO[]>{
     //return of(ALUMNOS);
-    return this.http.get<AlumnoCursoDTO[]>(this.urlEndPoint);
+    //return this.http.get<AlumnoCursoDTO[]>(this.urlEndPoint);
+    return this.http.get(this.urlEndPoint).pipe(map(response =>response as AlumnoCursoDTO[]));
   }
 }
