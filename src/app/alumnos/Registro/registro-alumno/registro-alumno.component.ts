@@ -81,12 +81,127 @@ export class RegistroAlumnoComponent implements OnInit {
 
   public crear():void{
 
-   // this.alumnodto.dirPpalAl=
-
-
+    this.formardirecciones();
+    this.formartelefonos();
+    this.formaredocivil();
+    this.formarsexo();
+    
     this.registroAlumnoService.createAlumno(this.alumnodto).subscribe(
       response=>this.router.navigate(['/alumnos'])
     )
+    }
+
+    public formartelefonos():void{
+      this.alumnodto.tlfPpalAl=this.codoperadorappalest + '-' + this.alumnodto.tlfPpalAl;
+      this.alumnodto.tlfSecAl=this.codoperadorasecundariaest + '-' + this.alumnodto.tlfSecAl;
+
+      this.alumnodto.tlfPpalRpr1=this.codoperadorappalrep1 + '-' + this.alumnodto.tlfPpalRpr1;
+      this.alumnodto.tlfSecRpr1=this.codoperadorasecundariarep1 + '-' + this.alumnodto.tlfSecRpr1;
+
+      this.alumnodto.tlfPpalRpr2=this.codoperadorappalrep2 + '-' + this.alumnodto.tlfPpalRpr2;
+      this.alumnodto.tlfSecRpr2=this.codoperadorasecundariarep2 + '-' + this.alumnodto.tlfSecRpr2;
+
+
+    }
+
+    public formaredocivil():void{
+
+      if(this.alumnodto.edoCivRpr1=='Casado'){
+        this.alumnodto.edoCivRpr1='C';
+      }
+
+      if(this.alumnodto.edoCivRpr1=='Soltero'){
+        this.alumnodto.edoCivRpr1='S';
+      }
+
+      if(this.alumnodto.edoCivRpr1=='Viudo'){
+        this.alumnodto.edoCivRpr1='V';
+      }
+
+      if(this.alumnodto.edoCivRpr1=='Divorciado'){
+        this.alumnodto.edoCivRpr1='D';
+      }
+
+      if(this.alumnodto.edoCivRpr2=='Casado'){
+        this.alumnodto.edoCivRpr2='C';
+      }
+
+      if(this.alumnodto.edoCivRpr2=='Soltero'){
+        this.alumnodto.edoCivRpr2='S';
+      }
+
+      if(this.alumnodto.edoCivRpr2=='Viudo'){
+        this.alumnodto.edoCivRpr2='V';
+      }
+
+      if(this.alumnodto.edoCivRpr2=='Divorciado'){
+        this.alumnodto.edoCivRpr2='D';
+      }
+
+    }
+
+    public formarsexo():void{
+
+      if(this.alumnodto.sexoAl=='Femenino'){
+        this.alumnodto.sexoAl='F';
+      }
+
+      if(this.alumnodto.sexoAl=='Masculino'){
+        this.alumnodto.sexoAl='M';
+      }
+
+      if(this.alumnodto.sexoRpr1=='Femenino'){
+        this.alumnodto.sexoRpr1='F';
+      }
+
+      if(this.alumnodto.sexoRpr1=='Masculino'){
+        this.alumnodto.sexoRpr1='M';
+      }
+
+
+      if(this.alumnodto.sexoRpr2=='Femenino'){
+        this.alumnodto.sexoRpr2='F';
+      }
+
+      if(this.alumnodto.sexoRpr2=='Masculino'){
+        this.alumnodto.sexoRpr2='M';
+      }
+
+
+
+
+
+
+    }
+
+    public formardirecciones():void{
+      this.alumnodto.dirPpalAl=this.alumnodto.dirPpalAl + ' Estado: ' + this.estadodirppalest + 
+    ' Municipio: '+ this.municipiodirppalest + ' Ciudad: ' + this.ciudaddirppalest + 
+    ' Parroquia: ' + this.parroquiadirppalest + ' Código Postal: '+this.codpostaldirppalest;
+
+    this.alumnodto.dirSecAl=this.alumnodto.dirSecAl + ' Estado: ' + this.estadodirsecest + 
+    ' Municipio: '+ this.municipiodirsecest + ' Ciudad: ' + this.ciudaddirsecest + 
+    ' Parroquia: ' + this.parroquiadirsecest + ' Código Postal: '+this.codpostaldirsecest;
+
+    this.alumnodto.dirPpalRpr1=this.alumnodto.dirPpalRpr1 + ' Estado: ' + this.estadodirppalrep1 + 
+    ' Municipio: '+ this.municipiodirppalrep1 + ' Ciudad: ' + this.ciudaddirppalrep1 + 
+    ' Parroquia: ' + this.parroquiadirppalrep1 + ' Código Postal: '+this.codpostaldirppalrep1;
+
+    this.alumnodto.dirSecRpr1=this.alumnodto.dirSecRpr1 + ' Estado: ' + this.estadodirsecrep1 + 
+    ' Municipio: '+ this.municipiodirsecrep1 + ' Ciudad: ' + this.ciudaddirsecrep2 + 
+    ' Parroquia: ' + this.parroquiadirsecrep1 + ' Código Postal: '+this.codpostaldirsecrep1;
+
+
+
+    this.alumnodto.dirPpalRpr2=this.alumnodto.dirPpalRpr2 + ' Estado: ' + this.estadodirppalrep2 + 
+    ' Municipio: '+ this.municipiodirppalrep2 + ' Ciudad: ' + this.ciudaddirppalrep2 + 
+    ' Parroquia: ' + this.parroquiadirppalrep2 + ' Código Postal: '+this.codpostaldirppalrep2;
+
+    this.alumnodto.dirSecRpr2=this.alumnodto.dirSecRpr2 + ' Estado: ' + this.estadodirsecrep2 + 
+    ' Municipio: '+ this.municipiodirsecrep2 + ' Ciudad: ' + this.ciudaddirsecrep2 + 
+    ' Parroquia: ' + this.parroquiadirsecrep2 + ' Código Postal: '+this.codpostaldirsecrep2;
+
+
     }
 
   }

@@ -41,7 +41,7 @@ export class Alumnodto {
     emailRpr1: string;
     tipoDocRep2: string;
     numDocRep2: string;
-    pprimNombRpr2: string;
+    primNombRpr2: string;
     segNombRpr2: string;
     primApellRpr2: string;
     segApellRpr2: string;

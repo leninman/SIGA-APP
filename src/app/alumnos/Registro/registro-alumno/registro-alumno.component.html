@@ -72,7 +72,7 @@
             <div id="datosalumno" class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <form class="form-horizontal" role="form" (ngSubmit)="crear()">
+                        <form class="form-horizontal" role="form">
                             <fieldset>
 
                                 <legend>Informacion básica del alumno</legend>
@@ -354,26 +354,26 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Estado" class="form-control">
+                                        <input type="text" placeholder="Estado" class="form-control"  [(ngModel)]="estadodirppalrep1" name="estadodirppalrep1">
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Municipio" class="form-control">
+                                        <input type="text" placeholder="Municipio" class="form-control" [(ngModel)]="municipiodirppalrep1" name="municipiodirppalrep1">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                        <input type="text" placeholder="Ciudad" class="form-control" [(ngModel)]="ciudaddirppalrep1" name="ciudaddirppalrep1">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                        <input type="text" placeholder="Parroquia" class="form-control" [(ngModel)]="parroquiadirppalrep1" name="parroquiadirppalrep1">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Código postal" class="form-control">
+                                        <input type="text" placeholder="Código postal" class="form-control" [(ngModel)]="codpostaldirppalrep1" name="codpostaldirppalrep1">
                                     </div>
                                 </div>
                                 <legend>Direccion secundaria de domicilio</legend>
 
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" class="form-control" [(ngModel)]="alumnodto.dirSecRpr1" name="dirSecRpr1">
                                     </div>
                                 </div>
 
@@ -381,25 +381,25 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Estado" class="form-control">
+                                        <input type="text" placeholder="Estado" class="form-control" [(ngModel)]="estadodirsecrep1" name="estadodirsecrep1">
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Municipio" class="form-control">
+                                        <input type="text" placeholder="Municipio" class="form-control" [(ngModel)]="municipiodirsecrep1" name="municipiodirsecrep1">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                        <input type="text" placeholder="Ciudad" class="form-control" [(ngModel)]="ciudaddirsecrep1" name="ciudaddirsecrep1">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                        <input type="text" placeholder="Parroquia" class="form-control" [(ngModel)]="parroquiadirsecrep1" name="parroquiadirsecrep1">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Código postal" class="form-control">
+                                        <input type="text" placeholder="Código postal" class="form-control" [(ngModel)]="codpostaldirsecrep1" name="codpostaldirsecrep1">
                                     </div>
                                 </div>
                                 <legend>Información de Contacto Principal</legend>
                                 <div class="form-group">
                                     <div class="col-sm-2">
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="codoperadorappalrep1" name="codoperadorappalrep1">
                                             <option>0212</option>
                                             <option>0414</option>
                                             <option>0414</option>
@@ -408,10 +408,10 @@
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control" [(ngModel)]="alumnodto.tlfPpalRpr1" name="tlfPpalRpr1">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="email" placeholder="Correo electronico" class="form-control">
+                                        <input type="email" placeholder="Correo electronico" class="form-control" [(ngModel)]="alumnodto.emailRpr1" name="emailRpr1">
                                     </div>
                                 </div>
 
@@ -419,8 +419,8 @@
 
                                 <legend>Información de Contacto Secundario</legend>
                                 <div class="form-group">
-                                    <div class="col-sm-2">
-                                        <select class="form-control">
+                                    <div class="col-sm-2" [(ngModel)]="codoperadorasecundariarep1" name="codoperadorasecundariarep1">
+                                        <select class="form-control" >
                                             <option>0212</option>
                                             <option>0414</option>
                                             <option>0414</option>
@@ -429,7 +429,7 @@
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control" [(ngModel)]="alumnodto.tlfSecRpr1" name="tlfSecRpr1">
                                     </div>
 
                                 </div>
@@ -475,22 +475,22 @@
 
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <label>Primer nombre</label>
-                                        <input type="text" class="form-control">
+                                        <label for="primNombRpr2">Primer nombre</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.primNombRpr2" name="primNombRpr2">
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Segundo nombre</label>
-                                        <input type="text" class="form-control">
+                                        <label for="segNombRpr2">Segundo nombre</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.segNombRpr2" name="segNombRpr2">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <label>Primer apellido</label>
-                                        <input type="text" class="form-control">
+                                        <label for="primApellRpr2">Primer apellido</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.primApellRpr2" name="primApellRpr2">
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Segundo apellido</label>
-                                        <input type="text" class="form-control">
+                                        <label for="segApellRpr2">Segundo apellido</label>
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.segApellRpr2" name="segApellRpr2">
                                     </div>
                                 </div>
 
@@ -498,7 +498,7 @@
                                 <div class="form-group">
                                     <div class="col-md-2">
                                         <label>T documento</label>
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="alumnodto.tipoDocRep2" name="tipoDocRep2">
                                             <option selected>V</option>
                                             <option>E</option>
                                             <option>P</option>
@@ -506,11 +506,11 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label>Numero de Cédula</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" [(ngModel)]="alumnodto.numDocRep2" name="numDocRep2">
                                     </div>
                                     <div class="col-md-6">
                                         <label>Fecha de nacimiento</label>
-                                        <input type="date" class="form-control">
+                                        <input type="date" class="form-control" [(ngModel)]="alumnodto.fechNacRpr2" name="fechNacRpr2">
                                     </div>
                                 </div>
 
@@ -519,14 +519,14 @@
 
                                     <div class="col-sm-2">
                                         <label>Edad</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" [(ngModel)]="alumnodto.edadRpr2" name="edadRpr2">
                                     </div>
 
 
 
                                     <div class="col-sm-4">
                                         <label>Sexo</label>
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="alumnodto.sexoRpr2" name="sexoRpr2">
                                             <option value="femenino">Femenino</option>
                                             <option value="masculino">Masculino</option>
                                         </select>
@@ -535,14 +535,14 @@
 
                                     <div class="col-sm-3">
                                         <label>Parentesco</label>
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="alumnodto.parentescoRpr2" name="parentescoRpr2">
                                             <option value="madre">Madre</option>
                                             <option value="padre">Padre</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-3">
                                         <label>Edo Civil</label>
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="alumnodto.edoCivRpr2" name="edoCivRpr2">
                                             <option value="casado">Casado</option>
                                             <option value="soltero">Soltero</option>
                                             <option value="viudo">Viudo</option>
@@ -556,7 +556,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.dirPpalRpr2" name="dirPpalRpr2">
                                     </div>
                                 </div>
 
@@ -564,26 +564,26 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Estado" class="form-control">
+                                        <input type="text" placeholder="Estado" class="form-control" [(ngModel)]="estadodirppalrep2" name="estadodirppalrep2">
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Municipio" class="form-control">
+                                        <input type="text" placeholder="Municipio" class="form-control" [(ngModel)]="municipiodirppalrep2" name="municipiodirppalrep2">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                        <input type="text" placeholder="Ciudad" class="form-control" [(ngModel)]="ciudaddirppalrep2" name="ciudaddirppalrep2">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                        <input type="text" placeholder="Parroquia" class="form-control" [(ngModel)]="parroquiadirppalrep2" name="parroquiadirppalrep2">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Código postal" class="form-control">
+                                        <input type="text" placeholder="Código postal" class="form-control" [(ngModel)]="codpostaldirppalrep2" name="codpostaldirppalrep2">
                                     </div>
                                 </div>
                                 <legend>Direccion secundaria de domicilio</legend>
 
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" [(ngModel)]="alumnodto.dirSecRpr2" name="dirSecRpr2">
                                     </div>
                                 </div>
 
@@ -591,25 +591,25 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Estado" class="form-control">
+                                        <input type="text" placeholder="Estado" class="form-control" [(ngModel)]="estadodirsecrep2" name="estadodirsecrep2">
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="Municipio" class="form-control">
+                                        <input type="text" placeholder="Municipio" class="form-control" [(ngModel)]="municipiodirsecrep2" name="municipiodirsecrep2">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Ciudad" class="form-control">
+                                        <input type="text" placeholder="Ciudad" class="form-control" [(ngModel)]="ciudaddirsecrep2" name="ciudaddirsecrep2">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Parroquia" class="form-control">
+                                        <input type="text" placeholder="Parroquia" class="form-control" [(ngModel)]="parroquiadirsecrep2" name="parroquiadirsecrep2">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="Código postal" class="form-control">
+                                        <input type="text" placeholder="Código postal" class="form-control" [(ngModel)]="codpostaldirsecrep2" name="codpostaldirsecrep2">
                                     </div>
                                 </div>
                                 <legend>Información de Contacto Principal</legend>
                                 <div class="form-group">
                                     <div class="col-sm-2">
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="codoperadorappalrep2" name="codoperadorappalrep2">
                                             <option>0212</option>
                                             <option>0414</option>
                                             <option>0414</option>
@@ -618,10 +618,10 @@
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control" [(ngModel)]="alumnodto.tlfPpalRpr2" name="tlfPpalRpr2">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="email" placeholder="Correo electronico" class="form-control">
+                                        <input type="email" placeholder="Correo electronico" class="form-control" [(ngModel)]="alumnodto.emailRpr2" name="emailRpr2">
                                     </div>
                                 </div>
 
@@ -630,7 +630,7 @@
                                 <legend>Información de Contacto Secundario</legend>
                                 <div class="form-group">
                                     <div class="col-sm-2">
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="codoperadorasecundariarep2" name="codoperadorasecundariarep2">
                                             <option>0212</option>
                                             <option>0414</option>
                                             <option>0414</option>
@@ -639,7 +639,7 @@
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="Numero de telefono" class="form-control">
+                                        <input type="text" placeholder="Numero de telefono" class="form-control" [(ngModel)]="alumnodto.tlfSecRpr2" name="tlfSecRpr2">
                                     </div>
 
                                 </div>
@@ -675,20 +675,20 @@
                                 <div class="form-group">
                                     <div class="col-md-2">
                                         <label>Año que cursa</label>
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="alumnodto.annio" name="annio">
                                             <option *ngFor="let annio of annios">{{annio.annio}}</option>
                                         </select>
                                     </div>
                                     <div class="col-md-2">
                                         <label>Seccion</label>
-                                        <select class="form-control">
+                                        <select class="form-control"[(ngModel)]="alumnodto.seccion" name="seccion">
                                             <option *ngFor="let seccion of secciones">{{seccion.seccion}}</option>
                                         </select>
                                     </div>
 
                                     <div class="col-md-2">
                                         <label>Año escolar</label>
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="alumnodto.annioescolar" name="annioescolar">
                                             <option *ngFor="let annioescolar of annioescolar">{{annioescolar.intAnnioEsc}}</option>
                                         </select>
                                     </div>
@@ -698,7 +698,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-5">
                             
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="submit" class="btn btn-primary" (click)="crear()">Guardar</button>
                                             <button type="submit" class="btn btn-default">Cancelar</button>
                             
                             
