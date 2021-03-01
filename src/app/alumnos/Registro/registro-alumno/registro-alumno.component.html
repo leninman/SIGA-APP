@@ -223,7 +223,7 @@
                                 <legend>Información de Contacto Secundario</legend>
                                 <div class="form-group">
                                     <div class="col-sm-2">
-                                        <select class="form-control" [(ngModel)]="codoperadorasecundariaest" name="codoperadorasecundariaest">
+                                        <select class="form-control" [(ngModel)]="codoperadorasecest" name="codoperadorasecest">
                                             <option>0212</option>
                                             <option>0414</option>
                                             <option>0414</option>
@@ -419,13 +419,13 @@
 
                                 <legend>Información de Contacto Secundario</legend>
                                 <div class="form-group">
-                                    <div class="col-sm-2" [(ngModel)]="codoperadorasecundariarep1" name="codoperadorasecundariarep1">
-                                        <select class="form-control" >
+                                    <div class="col-sm-2">
+                                        <select class="form-control" [(ngModel)]="codoperadorasecrep1" name="codoperadorasecrep1">
                                             <option>0212</option>
                                             <option>0414</option>
                                             <option>0414</option>
                                             <option>0424</option>
-                                            <option>0416/option>
+                                            <option>0416</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
@@ -630,7 +630,7 @@
                                 <legend>Información de Contacto Secundario</legend>
                                 <div class="form-group">
                                     <div class="col-sm-2">
-                                        <select class="form-control" [(ngModel)]="codoperadorasecundariarep2" name="codoperadorasecundariarep2">
+                                        <select class="form-control" [(ngModel)]="codoperadorasecrep2" name="codoperadorasecrep2">
                                             <option>0212</option>
                                             <option>0414</option>
                                             <option>0414</option>
@@ -673,22 +673,22 @@
                                 <legend>Informacion del curso</legend>
 
                                 <div class="form-group">
-                                    <div class="col-md-2">
+                                    <!--<div class="col-md-2">
                                         <label>Año que cursa</label>
-                                        <select class="form-control" [(ngModel)]="alumnodto.annio" name="annio">
+                                        <select class="form-control" [(ngModel)]="annio" name="annio">
                                             <option *ngFor="let annio of annios">{{annio.annio}}</option>
                                         </select>
                                     </div>
                                     <div class="col-md-2">
                                         <label>Seccion</label>
-                                        <select class="form-control"[(ngModel)]="alumnodto.seccion" name="seccion">
+                                        <select class="form-control" [(ngModel)]="seccion" name="seccion">
                                             <option *ngFor="let seccion of secciones">{{seccion.seccion}}</option>
                                         </select>
-                                    </div>
+                                    </div>-->
 
                                     <div class="col-md-2">
-                                        <label>Año escolar</label>
-                                        <select class="form-control" [(ngModel)]="alumnodto.annioescolar" name="annioescolar">
+                                        <label>Periodo escolar</label>
+                                        <select class="form-control" [(ngModel)]="annioesc" name="annioesc" (change)="asignaannioes()">
                                             <option *ngFor="let annioescolar of annioescolar">{{annioescolar.intAnnioEsc}}</option>
                                         </select>
                                     </div>

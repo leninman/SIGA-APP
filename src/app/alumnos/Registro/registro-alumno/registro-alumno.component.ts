@@ -5,6 +5,7 @@ import { Secciondto } from '../../secciondto';
 import {RegistroAlumnoService} from 'src/app/alumnos/Registro/registro-alumno/registro-alumno.service';
 import { Alumnodto } from '../../alumnodto';
 import {Router} from '@angular/router';
+import { Cursodto } from 'src/app/cursos/cursodto';
 
 @Component({
   selector: 'app-registro-alumno',
@@ -16,6 +17,7 @@ export class RegistroAlumnoComponent implements OnInit {
   annios:Anniosdto[];
   annioescolar:Annioescolardto[];
   secciones:Secciondto[];
+  cursos:Cursodto[];
   public estadodirppalest:string;
   public municipiodirppalest:string;
   public ciudaddirppalest:string;
@@ -27,7 +29,7 @@ export class RegistroAlumnoComponent implements OnInit {
   public parroquiadirsecest:string;
   public codpostaldirsecest:string;
   public codoperadorappalest:string;
-  public codoperadorasecundariaest:string;
+  public codoperadorasecest:string;
   public estadodirppalrep1:string;
   public municipiodirppalrep1:string;
   public ciudaddirppalrep1:string;
@@ -39,7 +41,7 @@ export class RegistroAlumnoComponent implements OnInit {
   public parroquiadirsecrep1:string;
   public codpostaldirsecrep1:string;
   public codoperadorappalrep1:string;
-  public codoperadorasecundariarep1:string;
+  public codoperadorasecrep1:string;
   public estadodirppalrep2:string;
   public municipiodirppalrep2:string;
   public ciudaddirppalrep2:string;
@@ -51,12 +53,15 @@ export class RegistroAlumnoComponent implements OnInit {
   public parroquiadirsecrep2:string;
   public codpostaldirsecrep2:string;
   public codoperadorappalrep2:string;
-  public codoperadorasecundariarep2:string;
+  public codoperadorasecrep2:string;
 
-
+  public annio:string;
+  public seccion:string;
+  public annioesc:string;
 
 
   public alumnodto=new Alumnodto();
+  public cursodto=new Cursodto();
 
 
 
@@ -77,12 +82,24 @@ export class RegistroAlumnoComponent implements OnInit {
     this.registroAlumnoService.getSecciones().subscribe(
       (secciones)=>this.secciones=secciones
     );
+
+    
+  }
+
+  public obtenercursospp():void{
+
+    this.registroAlumnoService.getCursosPorPeriodo(this.annioesc).subscribe(
+
+      (cursos)=>this.cursos=cursos
+
+    );
+
   }
 
   public crear():void{
 
-    this.formardirecciones();
-    this.formartelefonos();
+    //this.formardirecciones();
+    //this.formartelefonos();
     this.formaredocivil();
     this.formarsexo();
     
@@ -93,13 +110,13 @@ export class RegistroAlumnoComponent implements OnInit {
 
     public formartelefonos():void{
       this.alumnodto.tlfPpalAl=this.codoperadorappalest + '-' + this.alumnodto.tlfPpalAl;
-      this.alumnodto.tlfSecAl=this.codoperadorasecundariaest + '-' + this.alumnodto.tlfSecAl;
+      this.alumnodto.tlfSecAl=this.codoperadorasecest + '-' + this.alumnodto.tlfSecAl;
 
       this.alumnodto.tlfPpalRpr1=this.codoperadorappalrep1 + '-' + this.alumnodto.tlfPpalRpr1;
-      this.alumnodto.tlfSecRpr1=this.codoperadorasecundariarep1 + '-' + this.alumnodto.tlfSecRpr1;
+      this.alumnodto.tlfSecRpr1=this.codoperadorasecrep1 + '-' + this.alumnodto.tlfSecRpr1;
 
       this.alumnodto.tlfPpalRpr2=this.codoperadorappalrep2 + '-' + this.alumnodto.tlfPpalRpr2;
-      this.alumnodto.tlfSecRpr2=this.codoperadorasecundariarep2 + '-' + this.alumnodto.tlfSecRpr2;
+      this.alumnodto.tlfSecRpr2=this.codoperadorasecrep2 + '-' + this.alumnodto.tlfSecRpr2;
 
 
     }
@@ -172,6 +189,20 @@ export class RegistroAlumnoComponent implements OnInit {
 
 
 
+    }
+
+    public asignaannio():void{
+      this.alumnodto.annio=this.annio;
+      
+    }
+
+    public asignasec():void{
+      this.alumnodto.seccion=this.seccion;
+    }
+
+    public asignaannioes():void{
+      //this.alumnodto.annioescolar=this.annioesc;
+      console.log(this.annioesc);
     }
 
     public formardirecciones():void{

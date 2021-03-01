@@ -7,6 +7,7 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Alumnodto } from '../../alumnodto';
 import  {Responses} from 'src/app/responses';
 import {map} from 'rxjs/operators';
+import {Cursodto} from 'src/app/cursos/cursodto';
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +31,12 @@ export class RegistroAlumnoService {
 
   getSecciones(): Observable<Secciondto[]>{
     return this.http.get(this.urlBaseEndPoint+'consultarsecciones').pipe(map(response =>response as Secciondto[]));
+  }
+
+  getCursosPorPeriodo(periodo:string):Observable<Cursodto[]>{
+
+    return this.http.get(this.urlBaseEndPoint+'consultarcursosporperiodo').pipe(map(response=>response as Cursodto[]));
+
   }
 
   createAlumno(alumnodto:Alumnodto): Observable<Responses> {

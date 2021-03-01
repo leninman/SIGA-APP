@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RegistroAlumnoComponent } from './alumnos/Registro/registro-alumno/registro-alumno.component';
 import { FormsModule } from '@angular/forms';
+import { CursosComponent } from './cursos/cursos.component';
 
 
 
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     RegistroAlumnoComponent,
+    CursosComponent,
   
 
   
