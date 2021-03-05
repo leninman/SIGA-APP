@@ -4,7 +4,7 @@ import { Anniosdto } from '../../anniosdto';
 import { Secciondto } from '../../secciondto';
 import {RegistroAlumnoService} from 'src/app/alumnos/Registro/registro-alumno/registro-alumno.service';
 import { Alumnodto } from '../../alumnodto';
-import {Router} from '@angular/router';
+import {Router,Params} from '@angular/router';
 import { Cursodto } from 'src/app/cursos/cursodto';
 
 @Component({
@@ -57,7 +57,8 @@ export class RegistroAlumnoComponent implements OnInit {
 
   public annio:string;
   public seccion:string;
-  public annioesc:string;
+  public annioesc:string="2020-2021";
+  public periodo:string;
 
 
   public alumnodto=new Alumnodto();
@@ -87,6 +88,10 @@ export class RegistroAlumnoComponent implements OnInit {
   }
 
   public obtenercursospp():void{
+
+   // console.log(this.annioesc);
+
+  
 
     this.registroAlumnoService.getCursosPorPeriodo(this.annioesc).subscribe(
 

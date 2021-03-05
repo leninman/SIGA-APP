@@ -3,7 +3,7 @@ import {Annioescolardto} from 'src/app/alumnos/annioescolardto';
 import {Anniosdto} from 'src/app/alumnos/anniosdto';
 import {Secciondto} from 'src/app/alumnos/secciondto';
 import {Observable,of} from 'rxjs';
-import {HttpClient,HttpHeaders} from '@angular/common/http';
+import {HttpClient,HttpHeaders,HttpParams} from '@angular/common/http';
 import { Alumnodto } from '../../alumnodto';
 import  {Responses} from 'src/app/responses';
 import {map} from 'rxjs/operators';
@@ -34,9 +34,7 @@ export class RegistroAlumnoService {
   }
 
   getCursosPorPeriodo(periodo:string):Observable<Cursodto[]>{
-
-    return this.http.get(this.urlBaseEndPoint+'consultarcursosporperiodo').pipe(map(response=>response as Cursodto[]));
-
+    return this.http.get<Cursodto[]>(`${this.urlBaseEndPoint+'consultarcursosporperiodo'}/${periodo}`);
   }
 
   createAlumno(alumnodto:Alumnodto): Observable<Responses> {
