@@ -18,6 +18,10 @@ export class Cursodto {
     
     turno:string;
 
+    nivel:string;
+    
+    especialidad:string;
+
 
 
 }

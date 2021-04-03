@@ -19,35 +19,14 @@ export class RegistroAlumnoService {
 
   constructor(private http:HttpClient) { }
 
-  getAnnios(): Observable<Anniosdto[]>{
-    return this.http.get(this.urlBaseEndPoint+'consultarannios').pipe(map(response =>response as Anniosdto[]));
-  }
-
-
-  getAnnioEscolar(): Observable<Annioescolardto[]>{
-   return this.http.get(this.urlBaseEndPoint+'consultarannioescolar').pipe(map(response =>response as Annioescolardto[]));
-  }
-
-
-  getSecciones(): Observable<Secciondto[]>{
-    return this.http.get(this.urlBaseEndPoint+'consultarsecciones').pipe(map(response =>response as Secciondto[]));
-  }
-
-  getCursosPorPeriodo(periodo:string):Observable<Cursodto[]>{
-    return this.http.get<Cursodto[]>(`${this.urlBaseEndPoint+'consultarcursosporperiodo'}/${periodo}`);
+ 
+  getCursos():Observable<Cursodto[]>{
+    return this.http.get(this.urlBaseEndPoint+'consultarcursosporperiodo').pipe(map(response =>response as Cursodto[]));
   }
 
   createAlumno(alumnodto:Alumnodto): Observable<Responses> {
     return this.http.post<Responses>(this.urlBaseEndPoint+'registraralumno',alumnodto,{headers:this.httpHeaders});
   }
-
-
-  
-  
-
-
-
-
 
   
 }
