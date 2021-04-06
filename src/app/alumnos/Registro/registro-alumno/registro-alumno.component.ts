@@ -24,6 +24,8 @@ export class RegistroAlumnoComponent implements OnInit {
   public alumnodto = new Alumnodto();
   public cursodto = new Cursodto();
   visible: boolean = false;
+  public usarTlfPpalAl:boolean=false;
+  public usarDirPpalAl:boolean=false;
   filtrocurso: boolean = false;
   cursoelegido: boolean = false;
 
@@ -135,6 +137,24 @@ export class RegistroAlumnoComponent implements OnInit {
       response => this.router.navigate(['/alumnos'])
     )
   }
+
+
+  public agregarTelefono():void{
+      this.codoperadorasecest=this.codoperadorappalest;
+      this.textoTlfSecAl=this.textoTlfPpalAl;
+  }
+
+
+  public agregarDirSec():void{
+    this.textoDirSecAl=this.textoDirPpalAl;
+    this.estadodirsecest=this.estadodirppalest;
+    this.municipiodirsecest=this.municipiodirppalest;
+    this.ciudaddirsecest=this.ciudaddirppalest;
+    this.parroquiadirsecest=this.parroquiadirppalest;
+    this.codpostaldirsecest=this.codpostaldirppalest;
+  }
+
+  
 
   public formartelefonos(): void {
     this.alumnodto.tlfPpalAl = this.codoperadorappalest + '-' + this.textoTlfPpalAl;

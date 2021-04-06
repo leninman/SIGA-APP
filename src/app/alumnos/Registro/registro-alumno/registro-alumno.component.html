@@ -45,7 +45,7 @@
                 <div class="col-md-2">
                   <label for="tipoDocAl">T documento</label>
                   <select class="form-control" [(ngModel)]="alumnodto.tipoDocAl" name="tipoDocAl">
-                    <option selected>V</option>
+                    <option>V</option>
                     <option>E</option>
                     <option>P</option>
                   </select>
@@ -143,6 +143,12 @@
                   <!--<input type="text" class="form-control" [(ngModel)]="alumnodto.dirSecAl"
                                             name="dirSecAl">-->
                   <label>Direccion secundaria de domicilio</label>
+                  &nbsp; 
+                  &nbsp; 
+                  &nbsp; 
+                  &nbsp; 
+                   <input id="chkDirSecundaria" type="checkbox" [(ngModel)]="usarDirPpalAl" name="usarDirPpalAl" (click)="agregarDirSec();"/> Usar la misma principal
+
                   <input type="text" class="form-control" [(ngModel)]="textoDirSecAl" name="textoDirSecAl">
                 </div>
               </div>
@@ -225,9 +231,10 @@
                   </select>
                 </div>
                 <div class="col-sm-4">
-                  <!--<input type="text" placeholder="Numero de telefono" class="form-control"
-                                            [(ngModel)]="alumnodto.tlfSecAl" name="tlfSecAl">-->
                   <input type="text" placeholder="Numero de telefono" class="form-control" [(ngModel)]="textoTlfSecAl" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="7" name="textoTlfSecAl">
+                </div>
+                <div class="col-sm-5">
+                    <input id="chkTelefSecundario" type="checkbox" [(ngModel)]="usarTlfPpalAl" name="usarTlfPpalAl" (click)="agregarTelefono();"/> Usar el mismo principal
                 </div>
               </div>
             </form>
@@ -288,7 +295,7 @@
                 <div class="form-group row">
                   <div class="col-sm-2">
                     <label for="edadRpr1">Edad</label>
-                    <input type="number" class="form-control" [(ngModel)]="alumnodto.edadRpr1" name="edadRpr1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="2">
+                    <input type="text" class="form-control" [(ngModel)]="alumnodto.edadRpr1" name="edadRpr1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="2">
                   </div>
                   <div class="col-sm-4">
                     <label for="sexoRpr1">Sexo</label>
@@ -324,16 +331,12 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-3">
-                    <!--<input type="text" placeholder="Estado" class="form-control"
-                                            [(ngModel)]="estadodirppalrep1" name="estadodirppalrep1">-->
                     <label for="estadodirppalrep1">Estado</label>
                     <select class="form-control" [(ngModel)]="estadodirppalrep1" name="estadodirppalrep1">
                       <option>Miranda</option>
                     </select>
                   </div>
                   <div class="col-sm-3">
-                    <!--<input type="text" placeholder="Municipio" class="form-control"
-                                            [(ngModel)]="municipiodirppalrep1" name="municipiodirppalrep1">-->
                     <label for="municipiodirppalrep1">Municipio</label>
                     <select class="form-control" [(ngModel)]="municipiodirppalrep1" name="municipiodirppalrep1">
                       <option>Plaza</option>
@@ -341,8 +344,6 @@
                     </select>
                   </div>
                   <div class="col-sm-2">
-                    <!--<input type="text" placeholder="Ciudad" class="form-control"
-                                            [(ngModel)]="ciudaddirppalrep1" name="ciudaddirppalrep1">-->
                     <label for="ciudaddirppalrep1">Ciudad</label>
                     <select class="form-control" [(ngModel)]="ciudaddirppalrep1" name="ciudaddirppalrep1">
                       <option>Guarenas</option>
