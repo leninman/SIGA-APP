@@ -3,3 +3,37 @@ input,select{
       border-radius: 100px;
         border: 1px solid #008F39;
 }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;  
+  color: #636e72;
+  text-align: center;
+  background-color: gainsboro;
+   font-size: 14px;
+   height: 60px;
+}
+#card-title{
+  font-size: 24px;
+  text-align: center;
+}
+thead{
+  /* background-color: $color_gris2;
+   border: 0px;*/
+   background-color: gainsboro;
+   font-size: 14px;
+   height: 60px;
+ }
+
+
+ 
+  #dataRow{
+    border-bottom: 1px solid gainsboro;
+  }
+  #dataRow:hover{
+    cursor: pointer;
+    height: 60px;
+
+  }
+
+

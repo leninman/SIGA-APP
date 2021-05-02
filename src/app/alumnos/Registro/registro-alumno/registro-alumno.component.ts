@@ -132,6 +132,7 @@ export class RegistroAlumnoComponent implements OnInit {
     this.formartelefonos();
     this.formaredocivil();
     this.formarsexo();
+    this.validar();
 
     this.registroAlumnoService.createAlumno(this.alumnodto).subscribe(
       response => this.router.navigate(['/alumnos'])
@@ -139,19 +140,99 @@ export class RegistroAlumnoComponent implements OnInit {
   }
 
 
-  public agregarTelefono():void{
+  public validar():void{
+
+    if(this.textoDirSecAl==""||this.textoDirSecAl==null){
+      this.textoDirSecAl=this.textoDirPpalAl;
+    }
+    if(this.estadodirsecest==""||this.estadodirsecest==null){
+      this.estadodirsecest=this.estadodirppalest;
+    }
+    if(this.municipiodirsecest==""||this.municipiodirsecest==null){
+      this.municipiodirsecest=this.municipiodirppalest;
+    }
+    if(this.ciudaddirsecest==""||this.ciudaddirsecest==null){
+      this.ciudaddirsecest=this.ciudaddirppalest;
+    }
+    if(this.parroquiadirsecest==""||this.parroquiadirsecest==null){
+      this.parroquiadirsecest=this.parroquiadirppalest;
+    }
+    if(this.codpostaldirsecest==""||this.codpostaldirsecest==null){
+      this.codpostaldirsecest=this.codpostaldirppalest;
+    }
+
+
+      
+    if(this.textoDirSecRpr1==""||this.textoDirSecRpr1==null){
+      this.textoDirSecRpr1=this.textoDirPpalRpr1;
+    }
+    if(this.estadodirsecrep1==""||this.estadodirsecrep1==null){
+      this.estadodirsecrep1=this.estadodirppalrep1;
+    }
+    if(this.municipiodirsecrep1==""||this.municipiodirsecrep1==null){
+      this.municipiodirsecrep1=this.municipiodirppalrep1;
+    }
+    if(this.ciudaddirsecrep1==""||this.ciudaddirsecrep1==null){
+      this.ciudaddirsecrep1=this.ciudaddirppalrep1;
+    }
+    if(this.parroquiadirsecrep1==""||this.parroquiadirsecrep1==null){
+      this.parroquiadirsecrep1=this.parroquiadirppalrep1;
+    }
+    if(this.codpostaldirsecrep1==""||this.codpostaldirsecrep1==null){
+      this.codpostaldirsecrep1=this.codpostaldirppalrep1;
+    }
+
+
+
+    if(this.textoDirSecRpr2==""||this.textoDirSecRpr2==null){
+      this.textoDirSecRpr2=this.textoDirPpalRpr2;
+    }
+    if(this.estadodirsecrep2==""||this.estadodirsecrep2==null){
+      this.estadodirsecrep2=this.estadodirppalrep2;
+    }
+    if(this.municipiodirsecrep2==""||this.municipiodirsecrep2==null){
+      this.municipiodirsecrep2=this.municipiodirppalrep1;
+    }
+    if(this.ciudaddirsecrep2==""||this.ciudaddirsecrep2==null){
+      this.ciudaddirsecrep2=this.ciudaddirppalrep1;
+    }
+    if(this.parroquiadirsecrep2==""||this.parroquiadirsecrep2==null){
+      this.parroquiadirsecrep2=this.parroquiadirppalrep1;
+    }
+    if(this.codpostaldirsecrep2==""||this.codpostaldirsecrep2==null){
+      this.codpostaldirsecrep2=this.codpostaldirppalrep1;
+    }
+
+    if(this.codoperadorasecest==""||this.codoperadorasecest==null ){
       this.codoperadorasecest=this.codoperadorappalest;
+    }
+    if(this.textoTlfSecAl==""||this.textoTlfSecAl==null){
       this.textoTlfSecAl=this.textoTlfPpalAl;
-  }
+    }
+    if(this.codoperadorasecrep1==""||this.codoperadorasecrep1==null){
+      this.codoperadorasecrep1=this.codoperadorappalrep1;
+    }
+    if(this.textoTlfSecRpr1==""||this.textoTlfSecRpr1==null){
+      this.textoTlfSecRpr1=this.textoTlfPpalRpr1;
+    }
+    if(this.codoperadorasecrep2==""||this.codoperadorasecrep2==null){
+      this.codoperadorasecrep2=this.codoperadorappalrep2;
+    }
+    if(this.textoTlfSecRpr2==""||this.textoTlfSecRpr2==null){
+      this.textoTlfSecRpr2=this.textoTlfPpalRpr2;
+    }
 
 
-  public agregarDirSec():void{
-    this.textoDirSecAl=this.textoDirPpalAl;
-    this.estadodirsecest=this.estadodirppalest;
-    this.municipiodirsecest=this.municipiodirppalest;
-    this.ciudaddirsecest=this.ciudaddirppalest;
-    this.parroquiadirsecest=this.parroquiadirppalest;
-    this.codpostaldirsecest=this.codpostaldirppalest;
+
+
+
+
+
+
+
+
+
+
   }
 
   
