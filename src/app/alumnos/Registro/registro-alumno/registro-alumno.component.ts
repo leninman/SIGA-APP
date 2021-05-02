@@ -128,11 +128,12 @@ export class RegistroAlumnoComponent implements OnInit {
   }
 
   public crear(): void {
+    this.validar();
     this.formardirecciones();
     this.formartelefonos();
     this.formaredocivil();
     this.formarsexo();
-    this.validar();
+    
 
     this.registroAlumnoService.createAlumno(this.alumnodto).subscribe(
       response => this.router.navigate(['/alumnos'])
